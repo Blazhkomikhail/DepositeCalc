@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Deposit_Calculator</title>
+</head>
+<body>
+    <p><b>Калькулятор процентов, из расчёта 12% годовых.</b></p>
+  <form name="calculator">
+    <table>
+      <tr>
+        <td>Сумма</td>
+        <td>
+          <input name="money" type="text" class="inpSum" value="10000">
+          <span id="nanWarning">Только число!!!</span>
+        </td>
+      </tr>
+      <tr>
+        <td>Срок в месяцах</td>
+        <td>
+          <select name="months" id="months">
+            <option value="3">3 (минимум)</option>
+            <option value="6">6 (полгода)</option>
+            <option value="12" selected>12 (год)</option>
+            <option value="18">18 (1.5 года)</option>
+            <option value="24">24 (2 года)</option>
+            <option value="30">30 (2.5 года)</option>
+            <option value="36">36 (3 года)</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>С капитализацией</td>
+        <td>
+          <input name="capitalization" id="capital" type="checkbox">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <table id="diagram">
+    <tr>
+      <th>Было: <br> <span id="before"></span> </th>
+      <th>Станет:<br><span id="after"></span></th>
+    </tr>
+    <tr>
+      <th id="money-before"></th>
+      <th id="money-after"></th>
+    </tr>
+    <tr>
+      <td>
+        <div style="background: red;width:40px;height:100px">
+        </div>
+      </td>
+      <td>
+        <div style="background: green;width:40px;height:0" id="heightAfter"></div>
+      </td>
+    </tr>
+  </table>
+  <script src="index.js"></script>
+</body>
+</html>
